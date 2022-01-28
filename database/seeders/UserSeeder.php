@@ -17,12 +17,12 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'User',
             'email' => 'user@abc.com',
-            'profile' => 'template\assets\img\avatar-1.jpg',
+            'profile' => 'img\avatar-1.jpg',
             'phone' => '9876543210',
             'gender' => 'Male',
-            'hobby' => 'cricket, chess, game',
-            'country' => 'india',
-            'address' => 'visnagar',
+            'hobby' => 'Cricket, Chess, Reading',
+            'country' => 'India',
+            'address' => 'Visnagar',
             'password' => bcrypt('12345678'), //Hash::make('12345678'),
         ]);
     }
