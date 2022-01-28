@@ -30,7 +30,7 @@
                                         </div>
                                         @endif
                                     </div>
-                                    <form action="{{ route('profile') }}" method="post" id="profile-form" enctype="multipart/form-data">
+                                    <form action="{{ route('profile') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <x-auth-validation-errors class="text-center mb-6" :errors="$errors" />
@@ -46,7 +46,7 @@
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="small" for="profile-phone">Phone</label>
-                                                    <input class="form-control" id="mobile" type="text" placeholder="Enter your number" name="mobile" value="{{ $user->phone }}">
+                                                    <input class="form-control" id="phone" type="number" placeholder="Enter your phone" name="phone" value="{{ $user->phone }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="small" for="profile-about">Address</label>
-                                                    <textarea class="form-control" id="address" rows="1" placeholder="Address" data-autosize="true" name="address"></textarea>
+                                                    <textarea class="form-control" id="address" rows="1" placeholder="Address" data-autosize="true" name="address">{{ $user->address }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-6">
