@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->string('hobby')->nullable();
             $table->string('country')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('status')->default('Pending');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

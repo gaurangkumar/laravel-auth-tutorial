@@ -25,7 +25,6 @@ class HomeController extends Controller
     public function profile(Request $request)
     {
         $user = auth()->user();
-        echo "<pre>";print_r($request->toArray());exit;
 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -34,6 +33,7 @@ class HomeController extends Controller
             'hobby' => 'required|array',
             'address' => 'required|string',
             'country' => 'required|string',
+            'dob' => 'required|date',
         ]);
 
         if ($user->email !== $request->email) {
@@ -47,9 +47,10 @@ class HomeController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'gender' => $request->gender,
-            'hobby' => $request->hobby,
+            'hobby' => implode(',', $request->hobby),
             'address' => $request->address,
             'country' => $request->country,
+            'dob' => $request->dob,
         ];
 
         if (! empty($request->profile)) {
@@ -63,7 +64,8 @@ class HomeController extends Controller
         }
 
         $result = $user->update($data);
+        //echo "<pre>";print_r($result);exit;
 
-        return redirect()->route('settings');
+        return redirect()->route('dashboard');
     }
 }

@@ -17,12 +17,13 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'User',
             'email' => 'user@abc.com',
-            'profile' => 'img\avatar-1.jpg',
+            'profile' => 'profile/jack-sparrow.jpg',
             'phone' => '9876543210',
             'gender' => 'Male',
             'hobby' => 'Cricket, Chess, Reading',
             'country' => 'India',
             'address' => 'Visnagar',
+            'dob' => '2000-01-01',
             'password' => bcrypt('12345678'), //Hash::make('12345678'),
         ]);
     }

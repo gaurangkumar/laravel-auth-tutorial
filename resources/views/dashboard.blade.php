@@ -21,7 +21,7 @@
                                         @if(!empty($user->profile))
                                         <div class="row">
                                             <div class="col-12">
-                                                <img class="avatar-img" width="200" src="{{ asset($user->profile) }}" alt="{{ $user->name }}">
+                                                <img class="avatar-img" width="200" src="{{ asset('storage/'.$user->profile) }}" alt="{{ $user->name }}">
                                             </div>
                                         </div>
                                         @else
@@ -37,16 +37,22 @@
                                         </div>
 
                                         <div class="row mt-3">
-                                            <div class="col-6">
+                                            <div class="col-4">
                                                 <div class="form-group">
                                                     <label class="small" for="profile-name">Name</label>
                                                     <input class="form-control" id="name" type="text" placeholder="Enter your name" name="name" value="{{ $user->name }}">
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-4">
                                                 <div class="form-group">
                                                     <label class="small" for="profile-phone">Phone</label>
                                                     <input class="form-control" id="phone" type="number" placeholder="Enter your phone" name="phone" value="{{ $user->phone }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label class="small" for="profile-email">Date of Birth</label>
+                                                    <input class="form-control" id="dob" type="date" placeholder="Enter your Date of Birth" name="dob" value="{{ $user->dob }}">
                                                 </div>
                                             </div>
                                         </div>

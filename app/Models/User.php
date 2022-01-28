@@ -32,6 +32,7 @@ class User extends Authenticatable
         'gender',
         'hobby',
         'country',
+        'dob',
     ];
 
     /**
